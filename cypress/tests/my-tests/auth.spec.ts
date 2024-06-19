@@ -1,4 +1,8 @@
 describe("Login and Register tests", function () {
+    beforeEach(function () {
+        cy.task("db:seed")
+    })
+    
     it("should login successfully", function () {
         cy.visit("/signin")
         cy.get("[data-test='signin-username']").type("Arvilla_Hegmann")
