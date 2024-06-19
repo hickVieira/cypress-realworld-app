@@ -1,3 +1,20 @@
+### Changes
+I forked this mostly to get a feel how cypress works in a real project.
+Here are the new test cases I added/remade for learning purposes:
+- my-tests
+  - [x] should login successfully
+  - [x] should display error message due to invalid username
+  - [x] should display error message due to invalid password
+  - [x] should register successfully
+  - [x] should display error message due to missing first name
+  - [x] should display error message due to missing last name
+  - [x] should display error message due to missing username
+  - [x] should display error message due to missing password
+  - [x] should display error message due to passwords not matching
+  - [x] should display error message due to password having wrong length
+
+<br>
+
 <p align="center">
   <!-- We use two SVGs here so that this displays correctly
     on Github. This might not look right in other Markdown previewers. -->
