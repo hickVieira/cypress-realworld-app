@@ -38,4 +38,16 @@ export class utils {
         if (expectedPage)
             utils.locationShouldBe(expectedPage)
     }
+
+    public static onboarding(expectedPage?: Pages) {
+        cy.get("[data-test='user-onboarding-next']").click()
+        cy.get("[data-test='bankaccount-bankName-input']").type("Banco do Brasil")
+        cy.get("[data-test='bankaccount-routingNumber-input']").type("123456789")
+        cy.get("[data-test='bankaccount-accountNumber-input']").type("987654321")
+        cy.get("[data-test='bankaccount-submit']").click()
+        cy.get("[data-test='user-onboarding-next']").click()
+
+        if (expectedPage)
+            utils.locationShouldBe(expectedPage)
+    }
 }
