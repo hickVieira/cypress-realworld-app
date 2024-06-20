@@ -12,7 +12,7 @@ describe("Transaction feed tests", function () {
         cy.location("pathname").should("equal", "/personal")
     })
 
-    it.only("should display empty personal transaction feed", function () {
+    it("should display empty personal transaction feed", function () {
         utils.signUp("Fulano", "Ciclano", "tester", "1234", "1234", Pages.SignIn)
         utils.signIn("tester", "1234", Pages.Root)
         utils.onboarding(Pages.Root)
