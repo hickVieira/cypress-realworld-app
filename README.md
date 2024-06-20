@@ -2,17 +2,24 @@
 I forked this mostly to get a feel how cypress works in a real project.
 Here are the new test cases I added/remade for learning purposes:
 - my-tests
-  - [x] should login successfully
-  - [x] should display error message due to invalid username
-  - [x] should display error message due to invalid password
-  - [x] should register successfully
-  - [x] should display error message due to missing first name
-  - [x] should display error message due to missing last name
-  - [x] should display error message due to missing username
-  - [x] should display error message due to missing password
-  - [x] should display error message due to passwords not matching
-  - [x] should display error message due to password having wrong length
-
+  - [x] auth
+    - [x] should login successfully
+    - [x] should display error message when invalid username
+    - [x] should display error message when invalid password
+    - [x] should register successfully
+    - [x] should display error message when missing first name
+    - [x] should display error message when missing last name
+    - [x] should display error message when missing username
+    - [x] should display error message when missing password
+    - [x] should display error message when passwords not matching
+    - [x] should display error message when password having wrong length
+  - [x] transaction
+    - [x] should send money successfully
+    - [x] should display error message when not enough funds to complete transaction
+    - [x] should display error message when send amount is negative
+- bugs I found
+  - you can send money you do not have (infinite money)
+  - you can send negative money (and increase your own funds in the process lol)
 <br>
 
 <p align="center">
