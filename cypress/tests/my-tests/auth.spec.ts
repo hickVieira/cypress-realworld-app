@@ -11,7 +11,7 @@ describe("Login and Register tests", function () {
         cy.location("pathname").should("equal", "/")
     })
 
-    it("should display error message due to invalid username", function () {
+    it("should display error message when invalid username", function () {
         cy.visit("/signin")
         cy.get("[data-test='signin-username']").type("sdasdsadsad")
         cy.get("[data-test='signin-password']").type("s3cret")
@@ -20,7 +20,7 @@ describe("Login and Register tests", function () {
         cy.contains("Username or password is invalid").should("be.visible")
     })
 
-    it("should display error message due to invalid password", function () {
+    it("should display error message when invalid password", function () {
         cy.visit("/signin")
         cy.get("[data-test='signin-username']").type("Arvilla_Hegmann")
         cy.get("[data-test='signin-password']").type("12345")
@@ -40,7 +40,7 @@ describe("Login and Register tests", function () {
         cy.location("pathname").should("equal", "/signin")
     })
 
-    it("should display error message due to missing first name", function () {
+    it("should display error message when missing first name", function () {
         cy.visit("/signup")
         cy.get("[data-test='signup-first-name']").type('{selectall}{backspace}')
         cy.get("[data-test='signup-last-name']").type("Ciclano")
@@ -52,7 +52,7 @@ describe("Login and Register tests", function () {
         cy.location("pathname").should("equal", "/signup")
     })
 
-    it("should display error message due to missing last name", function () {
+    it("should display error message when missing last name", function () {
         cy.visit("/signup")
         cy.get("[data-test='signup-first-name']").type("Fulano")
         cy.get("[data-test='signup-last-name']").type('{selectall}{backspace}')
@@ -64,7 +64,7 @@ describe("Login and Register tests", function () {
         cy.location("pathname").should("equal", "/signup")
     })
 
-    it("should display error message due to missing username", function () {
+    it("should display error message when missing username", function () {
         cy.visit("/signup")
         cy.get("[data-test='signup-first-name']").type("Fulano")
         cy.get("[data-test='signup-last-name']").type("Ciclano")
@@ -76,7 +76,7 @@ describe("Login and Register tests", function () {
         cy.location("pathname").should("equal", "/signup")
     })
 
-    it("should display error message due to missing password", function () {
+    it("should display error message when missing password", function () {
         cy.visit("/signup")
         cy.get("[data-test='signup-first-name']").type("Fulano")
         cy.get("[data-test='signup-last-name']").type("Ciclano")
@@ -88,7 +88,7 @@ describe("Login and Register tests", function () {
         cy.location("pathname").should("equal", "/signup")
     })
 
-    it("should display error message due to passwords not matching", function () {
+    it("should display error message when passwords not matching", function () {
         cy.visit("/signup")
         cy.get("[data-test='signup-first-name']").type("Fulano")
         cy.get("[data-test='signup-last-name']").type("Ciclano")
@@ -100,7 +100,7 @@ describe("Login and Register tests", function () {
         cy.location("pathname").should("equal", "/signup")
     })
 
-    it("should display error message due to password having wrong length", function () {
+    it("should display error message when password having wrong length", function () {
         cy.visit("/signup")
         cy.get("[data-test='signup-first-name']").type("Fulano")
         cy.get("[data-test='signup-last-name']").type("Ciclano")
