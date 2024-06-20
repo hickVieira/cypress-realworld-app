@@ -17,6 +17,8 @@ Here are the new test cases I added/remade for learning purposes:
     - [x] should send money successfully
     - [x] should display error message when not enough funds to complete transaction
     - [x] should display error message when send amount is negative
+    - [x] should display transactions feed
+    - [x] should display no transactions message when none exists
 - bugs I found
   - you can send money you do not have (infinite money)
   - you can send negative money (and increase your own funds in the process lol)
