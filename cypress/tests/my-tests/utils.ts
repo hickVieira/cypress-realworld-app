@@ -21,8 +21,8 @@ export class utils {
         cy.get("[data-test='signup-password']").type(password)
         cy.get("[data-test='signup-confirmPassword']").type(passwordConfirm)
         cy.get("[data-test='signup-submit']").then(($button) => {
-            if(!$button.is(":disabled"))
-                cy.get("[data-test='signup-submit']").click()
+            if (!$button.is(":disabled"))
+                $button.trigger("click")
         })
 
         if (expectedPage)
