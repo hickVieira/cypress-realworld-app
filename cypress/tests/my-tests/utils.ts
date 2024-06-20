@@ -50,4 +50,18 @@ export class utils {
         if (expectedPage)
             utils.locationShouldBe(expectedPage)
     }
+
+    public static performTransaction(targetName: string, amount: number, message: string, should: string, expectedPage?: Pages) {
+        cy.get("[data-test='nav-top-new-transaction']").click()
+        cy.get("[data-test='user-list-search-input']").type(targetName)
+        cy.contains(targetName).click()
+
+        let amountString: string = (amount).toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 })
+        let msg: string = `sending ${amountString} to ${targetName} \| ${message}`
+        cy.get("[data-test='transaction-create-amount-input']").type(amountString)
+        cy.get("[data-test='transaction-create-description-input']").type(msg)
+        cy.get("[data-test='transaction-create-submit-payment']").click()
+
+        cy.contains(`Paid ${amountString} for ${msg}`).should(should)
+    }
 }
